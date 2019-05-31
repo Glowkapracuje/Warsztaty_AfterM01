@@ -33,5 +33,16 @@ public class Main {
 
 
 
+    //    SCAN A NUMBER FROM CONSOLE
+    public static int scanInt() {
+        Scanner scan = new Scanner(System.in);
+        while (!scan.hasNextInt()) {
+            System.out.println(ALLERT_NO_NUMBER);
+            scan.nextLine();
+        }
+        return scan.nextInt();
+
+    }
+
 
 }
