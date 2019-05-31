@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     private static final String HELLO_TEXT = "Hello! Let's start a game!";
-    private static final String GUESS_NUMBER = "Guess a number..";
+    private static final String GUESS_NUMBER = "Guess a number, from 1 to 100..";
     private static final String ALLERT_TOO_SMALL = "Your number is too small!";
     private static final String ALLERT_TOO_BIG = "Your number is too big!";
     private static final String ALLERT_NO_NUMBER = "Type a number, not a letter!";
@@ -16,7 +16,7 @@ public class Main {
 
     public static void main(String[] args){
 
-//        comparisonEngine();
+        comparisonEngine();
 
     }
 
@@ -41,6 +41,31 @@ public class Main {
             scan.nextLine();
         }
         return scan.nextInt();
+
+    }
+
+
+
+    //    COMPARISON ENGINE - COMPARE DRAWN RANDOM NUMBER WITH THE SCANNED ONE
+    public static void comparisonEngine(){
+
+        System.out.println(String.join(" ",HELLO_TEXT,GUESS_NUMBER));
+
+        int pcNumber = randGenerator();
+
+        int scannedNumber = scanInt();
+
+        while (pcNumber!=scannedNumber){
+            if (pcNumber>scannedNumber){
+                System.out.println(String.join(" ",ALLERT_TOO_SMALL,TRY_AGAIN));
+            } else {
+                System.out.println(String.join(" ",ALLERT_TOO_BIG,TRY_AGAIN));
+            }
+
+            scannedNumber = scanInt(); //Scan number again
+
+        }
+        System.out.println(WIN_TEXT);
 
     }
 
