@@ -14,23 +14,21 @@ public class Main {
     private static final String TRY_AGAIN = "Try again!";
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         comparisonEngine();
 
     }
 
 
-
     //    DRAW A RANDOM NUMBER
-    public static int randGenerator(){
+    public static int randGenerator() {
 
         int range = 100;
         Random generate = new Random();
-        return generate.nextInt(range)+1; //+1 because start with 1, not 0.
+        return generate.nextInt(range) + 1; //+1 because start with 1, not 0.
 
     }
-
 
 
     //    SCAN A NUMBER FROM CONSOLE
@@ -45,21 +43,20 @@ public class Main {
     }
 
 
-
     //    COMPARISON ENGINE - COMPARE DRAWN RANDOM NUMBER WITH THE SCANNED ONE
-    public static void comparisonEngine(){
+    public static void comparisonEngine() {
 
-        System.out.println(String.join(" ",HELLO_TEXT,GUESS_NUMBER));
+        System.out.println(String.join(" ", HELLO_TEXT, GUESS_NUMBER));
 
         int pcNumber = randGenerator();
 
         int scannedNumber = scanInt();
 
-        while (pcNumber!=scannedNumber){
-            if (pcNumber>scannedNumber){
-                System.out.println(String.join(" ",ALLERT_TOO_SMALL,TRY_AGAIN));
+        while (pcNumber != scannedNumber) {
+            if (pcNumber > scannedNumber) {
+                System.out.println(String.join(" ", ALLERT_TOO_SMALL, TRY_AGAIN));
             } else {
-                System.out.println(String.join(" ",ALLERT_TOO_BIG,TRY_AGAIN));
+                System.out.println(String.join(" ", ALLERT_TOO_BIG, TRY_AGAIN));
             }
 
             scannedNumber = scanInt(); //Scan number again
